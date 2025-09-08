@@ -20,11 +20,7 @@ colnames(countData) <- new_col
 
 #Metadata
 colData <- read.csv("metadata.csv")
-
-# Because the columns in countData has the order of Post -> Pre, Metadata should follow the same order. 
-# But turns out that this doesn't matter because DESeq2 will automatically account for this. 
-# Below code was to swap Pre and Post in the metadata. 
-colData$condition <- ifelse(colData$condition == "pre", "Post", "Pre")
+colData$condition <- relevel(colData$condition, ref = "Pre")
 
 # Making ID, condition (time), and group into factors.
 colData$ID <- factor(colData$ID)

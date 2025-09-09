@@ -20,14 +20,16 @@ colnames(countData) <- new_col
 
 #Metadata
 colData <- read.csv("metadata.csv")
-colData$condition <- relevel(colData$condition, ref = "Pre")
 
 # Making ID, condition (time), and group into factors.
 colData$ID <- factor(colData$ID)
 colData$condition <- factor(colData$condition)
 colData$group <- factor(colData$group)
 colData$sex <- factor(colData$sex)
-#According to Bioconductor, a new column 'ID.n' needs to be created to tell DESeq2 that my data contains paired observation e.g., Pre and Post from same subject. 
+
+# re-level condition. This sets the contrast as post - pre (positive logFC = upregulated at post)
+colData$condition <- relevel(colData$condition, ref = "pre")
+
 # Add a column 'ID.n' with unique numbering within each group
 colData <- colData %>%
   group_by(group) %>%
@@ -60,14 +62,20 @@ res <- results(dds)
 resultsNames(dds) 
 
 # Define contrast
-low_post <- results(dds, contrast=list("groupLOW.conditionPre")) # LOW Post-Pre
-mod_post <- results(dds, contrast=list("groupMOD.conditionPre")) # MOD Post-Pre
-high_post <- results(dds, contrast=list("groupHIGH.conditionPre")) # HIGH Post-Pre
-high_low_inter <- results(dds, contrast=list("groupHIGH.conditionPre", "groupLOW.conditionPre")) # HIGH - LOW
-high_mod_inter <- results(dds, contrast=list("groupHIGH.conditionPre", "groupMOD.conditionPre")) # HIGH - MOD
-mod_low_inter <- results(dds, contrast=list("groupMOD.conditionPre", "groupLOW.conditionPre")) # MOD - LOW
+low_post <- results(dds, contrast=list("groupLOW.conditionpost")) # LOW Post-Pre
+mod_post <- results(dds, contrast=list("groupMOD.conditionpost")) # MOD Post-Pre
+high_post <- results(dds, contrast=list("groupHIGH.conditionpost")) # HIGH Post-Pre
+high_low_inter <- results(dds, contrast=list("groupHIGH.conditionpost", "groupLOW.conditionpost")) # HIGH - LOW
+high_mod_inter <- results(dds, contrast=list("groupHIGH.conditionpost", "groupMOD.conditionpost")) # HIGH - MOD
+mod_low_inter <- results(dds, contrast=list("groupMOD.conditionpost", "groupLOW.conditionpost")) # MOD - LOW
 
+# Extract as dataframes for each contrast
+low_post <- as.data.frame(low_post[order(low_post$pvalue),])
+mod_post <- as.data.frame(mod_post[order(mod_post$pvalue),])
+high_post <- as.data.frame(high_post[order(high_post$pvalue),])
 
-
+high_low_inter <- as.data.frame(high_low_inter[order(high_low_inter$pvalue),])
+high_mod_inter <- as.data.frame(high_mod_inter[order(high_mod_inter$pvalue),])
+mod_low_inter <- as.data.frame(mod_low_inter[order(mod_low_inter$pvalue),])
 
 

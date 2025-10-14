@@ -7,14 +7,14 @@ The primary aim of this study was to compare the acute effects of three exercise
 
 
 ### KEY POINTS
-	•	Chronic adaptations in adipose tissue from regular exercise support cardiometabolic health, but the acute molecular triggers of these adaptations remain unclear.
-	•	Acute exercise alters gene expression and ERK phosphorylation in adipose tissue of regular exercisers.
-	•	Exercise intensity shapes the transcriptomic response: high intensity induces inflammatory and cytokine genes, while lower intensities upregulate protein translation and oxidative phosphorylation pathways.
-	•	Network and cell-type analyses highlight intensity-specific adipose responses, revealing gene modules linked to health traits and distinct adipocyte subpopulation engagement.
+Chronic adaptations in adipose tissue from regular exercise support cardiometabolic health, but the acute molecular triggers of these adaptations remain unclear.
+Acute exercise alters gene expression and ERK phosphorylation in adipose tissue of regular exercisers.
+Exercise intensity shapes the transcriptomic response: high intensity induces inflammatory and cytokine genes, while lower intensities upregulate protein translation and oxidative phosphorylation pathways.
+Network and cell-type analyses highlight intensity-specific adipose responses, revealing gene modules linked to health traits and distinct adipocyte subpopulation engagement.
 
 ### AUTHORS
 
-Cheehoon Ahn1,6, Tao Zhang1, Thomas Rode1, Gayoung Yang1, Olivia K. Chugh1, Sierra Ellis1, Sophia Ghayur1, Shriya Mehta1, Ryan Salzman1, Hui Jiang2, Stephen C.J. Parker2,3,4, Charles F. Burant5, Jeffrey F. Horowitz1*
+Cheehoon Ahn<sup>1,6</sup>, Tao Zhang<sup>1</sup>, Thomas Rode<sup>1</sup>, Gayoung Yang<sup>1</sup>, Olivia K. Chugh<sup>1</sup>, Sierra Ellis<sup>1</sup>, Sophia Ghayur<sup>1</sup>, Shriya Mehta<sup>1</sup>, Ryan Salzman<sup>1</sup>, Hui Jiang<sup>2</sup>, Stephen C.J. Parker<sup>2,3,4</sup>, Charles F. Burant<sup>5</sup>, Jeffrey F. Horowitz<sup>1</sup>*
 
 1Substrate Metabolism Laboratory, School of Kinesiology, University of Michigan, Ann Arbor, MI, USA
 2Department of Biostatistics, University of Michigan, Ann Arbor, MI, USA
